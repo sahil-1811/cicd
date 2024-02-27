@@ -17,7 +17,7 @@ jobs:
     if: >
       github.event.pull_request.base.ref == 'feature' &&
       github.event.pull_request.merged == true
-    environment: Feature
+    environment: Development
     runs-on: windows-latest
     steps:
       - name: Checkout code
