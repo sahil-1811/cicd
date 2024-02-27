@@ -2,10 +2,10 @@ name: Deploy DACPAC
 
 on:
   pull_request:
-    types: [closed]
     branches:
       - feature
       - development
+      - main
     paths:
       - 'DatabaseProjectdatabasesqlserver/**'
 
