@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "iQylLKoYggB9u306CHKbtGZfFLLwhpG2Mr3QjiG3iRvfYRSjPS4mjDkD3l6EzBtoYdlNiLzU+KVqDwNQy9qc/A==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\SAHIL MODY\\My PC (DESKTOP-4BQN8TG)\\Downloads\\test\\cicd\\DatabaseProjectdatabasesqlserver\\DatabaseProjectdatabasesqlserver.sqlproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SAHIL MODY\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\SAHIL MODY\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net46\\1.0.0\\microsoft.netframework.referenceassemblies.net46.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
