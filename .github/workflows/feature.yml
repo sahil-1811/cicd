@@ -7,7 +7,7 @@ on:
       - feature
       - development
     paths:
-      - 'Database/**'
+      - 'DatabaseProjectdatabasesqlserver/**'
 
 permissions:
   id-token: write
