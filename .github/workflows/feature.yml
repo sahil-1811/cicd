@@ -2,6 +2,8 @@ name: Deploy DACPAC
 
 on:
   pull_request:
+    types:
+      - closed
     branches:
       - feature
       - development
@@ -14,8 +16,9 @@ permissions:
   contents: read
 jobs:
   deploy_dacpac_test:
-    # if: github.event.pull_request.base.ref == 'development' && github.event.pull_request.merged == true
-    environment: Development
+    if: github.event.pull_request.base.ref == 'development' 
+    # && github.event.pull_request.merged == true
+    environment: test
     runs-on: windows-latest
     steps:
       - name: Checkout code
