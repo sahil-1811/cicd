@@ -6,8 +6,8 @@ on:
       - feature
       - development
       - main
-    paths:
-      - 'DatabaseProjectdatabasesqlserver/**'
+    # paths:
+    #   - 'DatabaseProjectdatabasesqlserver/**'
 
 permissions:
   id-token: write
@@ -15,7 +15,7 @@ permissions:
 jobs:
   deploy_dacpac_test:
     if: >
-      github.event.pull_request.base.ref == 'feature' &&
+      github.event.pull_request.base.ref == 'development' &&
       github.event.pull_request.merged == true
     environment: Development
     runs-on: windows-latest
