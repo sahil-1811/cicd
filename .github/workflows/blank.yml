@@ -5,14 +5,13 @@ on:
     types: [closed]
     branches:
       - feature
-      - main
+      - development
     paths:
       - 'Database/**'
 
 permissions:
   id-token: write
   contents: read
-
 jobs:
   deploy_dacpac_test:
     if: >
@@ -25,13 +24,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build DACPAC
-        run: dotnet build Database/MovistaDB/MovistaDB.sqlproj --framework net40
+        run: dotnet build DatabaseProjectdatabasesqlserver/DatabaseProjectdatabasesqlserver.sqlproj --framework net40
 
       - name: Upload DACPAC Artifact
         uses: actions/upload-artifact@v2
         with:
           name: dacpac
-          path: Database/MovistaDB/bin/Debug/MovistaDB.dacpac
+          path: DatabaseProjectdatabasesqlserver/bin/Debug/DatabaseProjectdatabasesqlserver.dacpac
 
       - name: Azure Login
         uses: azure/login@v1
@@ -44,14 +43,14 @@ jobs:
         uses: Azure/sql-action@v2
         with:
           connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-          path: Database/MovistaDB/bin/Debug/MovistaDB.dacpac
+          path: DatabaseProjectdatabasesqlserver/bin/Debug/DatabaseProjectdatabasesqlserver.dacpac
           action: publish
 
       - name: Run Post-Deployment Scripts
         uses: azure/sql-action@v2.2
         with:        
           connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-          path: Database/PostDeployment/*.sql          
+          path: DatabaseProjectdatabasesqlserver/Script.PostDeployment1.sql       
 
   deploy_dacpac_prod:
     if: >
